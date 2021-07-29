@@ -143,6 +143,7 @@ def start(bot: Bot, update: Update, args: List[str]):
 
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/{}?startgroup=true".format(bot.username)),  InlineKeyboardButton(text="🤖 Bot Codes", url="https://t.me/botcodesforyou")],
+                    [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/KeralaBots"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/KochuUpdates")],
                      [InlineKeyboardButton(text=" Update channel🔮 ", url="https://t.me/mhdfajisn"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
 
     else:
