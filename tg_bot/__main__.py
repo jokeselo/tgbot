@@ -18,7 +18,8 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-app.send_photo("me", "photo.https://t.me/daily_botmoney/1072", caption="Holidays!")
+app.send_photo("me", "photo.jpg", caption="Holidays!")
+
 Hello {}, My name is {}! I'm a powerful full group admin bot powered by [mhd fajis](tg://user?id={})
 I'm the most popular group bot in telegram
 Hit /help to know what are the Camndos.
