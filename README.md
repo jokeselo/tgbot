@@ -17,7 +17,7 @@ Alternatively, [find me on telegram](https://t.me/jithumon)! (Keep all support q
 
 To deploy me on heroku, use below button:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fajisnm/tgbot)
+[![mhd fajis ](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fajisnm/tgbot)
 
 There is also a [tutorial video](https://youtu.be/W6CLKrehy6w) if you want any help on creating heroku clone.
 
