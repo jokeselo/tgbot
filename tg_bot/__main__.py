@@ -18,8 +18,6 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-app.send_photo("me", "photo.jpg", caption="Holidays!")
-
 Hello {}, My name is {}! I'm a powerful full group admin bot powered by [mhd fajis](tg://user?id={})
 I'm the most popular group bot in telegram
 Hit /help to know what are the Camndos.
@@ -143,8 +141,7 @@ def start(bot: Bot, update: Update, args: List[str]):
 
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/{}?startgroup=true".format(bot.username)),  InlineKeyboardButton(text="🤖 Bot Codes", url="https://t.me/botcodesforyou")],
-                    [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/KeralaBots"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/KochuUpdates")],
-                     [InlineKeyboardButton(text=" Update channel🔮 ", url="https://t.me/mhdfajisn"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
+                    [InlineKeyboardButton(text=" Update channel🔮 ", url="https://t.me/mhdfajisn"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
 
     else:
         update.effective_message.reply_text("ചത്തിട്ടില്ലാ...")
