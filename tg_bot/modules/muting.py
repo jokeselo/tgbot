@@ -122,12 +122,11 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_admin(chat, user_id, member):
-        message.reply_text("I could mute admins Poda nirthii podaaa...
-")
+        message.reply_text("I really wish I could mute admins...")
         return ""
 
     if user_id == bot.id:
-        message.reply_text("I'm not MUTE myself, LOL")
+        message.reply_text("I'm not gonna MUTE myself, are you crazy?")
         return ""
 
     if not reason:
@@ -159,7 +158,7 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
     try:
         if member.can_send_messages is None or member.can_send_messages:
             bot.restrict_chat_member(chat.id, user_id, until_date=mutetime, can_send_messages=False)
-            message.reply_text("കുറച്ച് നേരം മിണ്ടാതിരി,Muted for {}!".format(time_val))
+            message.reply_text("Muted for {}!".format(time_val))
             return log
         else:
             message.reply_text("This user is already muted.")
