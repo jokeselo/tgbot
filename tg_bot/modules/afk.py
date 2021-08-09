@@ -63,7 +63,7 @@ def reply_afk(bot: Bot, update: Update):
                 if not user.reason:
                     res = "{} is AFK!".format(fst_name)
                 else:
-                    res = "{} is AFK! says its because of:\n{}".format(fst_name, user.reason)
+                    res = "{} is AFK/ അങ്ങേര് എന്തോ തിരക്ക് കാരണം ഇപ്പോൾ കീബോർഡിൽ ഇല്ല ! He said me it because of:\n{}".format(fst_name, user.reason)
                 message.reply_text(res)
 
 
@@ -72,12 +72,10 @@ def __gdpr__(user_id):
 
 
 __help__ = """
-അളിയൻ ഇവിടെ ഇല്ല എന്നും , എന്ത്കൊണ്ടാണ് എന്നുംചെക്കമാെരെ അറിയിക്കുന്നു
  - /afk <reason>: mark yourself as AFK.
  - brb <reason>: same as the afk command - but not a command.
 
 When marked as AFK, any mentions will be replied to with a message to say you're not available!
-Afk ആണെങ്കിൽ any mentions will be replied to with a message to say you're not available! 
 """
 
 __mod_name__ = "AFK"
@@ -86,7 +84,7 @@ AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
 AFK_REGEX_HANDLER = DisableAbleRegexHandler("(?i)brb", afk, friendly="afk")
 NO_AFK_HANDLER = MessageHandler(Filters.all & Filters.group, no_longer_afk)
 AFK_REPLY_HANDLER = MessageHandler(Filters.entity(MessageEntity.MENTION) | Filters.entity(MessageEntity.TEXT_MENTION),
-                                  reply_afk)
+                                   reply_afk)
 
 dispatcher.add_handler(AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REGEX_HANDLER, AFK_GROUP)
