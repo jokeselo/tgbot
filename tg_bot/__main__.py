@@ -18,7 +18,9 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hello {}, My name is {}! I'm a powerful full group admin bot powered by [mhd fajis](tg://user?id={})
+Hello {}, My name is {}!
+ 
+I'm a group admin bot powered by [mhd fajis](tg://user?id={})
 
 And Also most popular group bot in telegram
 
