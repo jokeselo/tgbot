@@ -166,7 +166,7 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
     except BadRequest as excp:
         if excp.message == "Replied message not found":
             # Do not reply
-            message.reply_text("Muted for {}!".format(time_val), quote=False)
+            message.reply_text("ലവന്റെ വായ അടപ്പിച്ചിട്ടുണ്ട്\nMuted for {}!".format(time_val), quote=False)
             return log
         else:
             LOGGER.warning(update)
