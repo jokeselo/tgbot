@@ -122,7 +122,7 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_admin(chat, user_id, member):
-        message.reply_text("I could mute admins... Poda nirthii podaaa..
+        message.reply_text("I could mute admins Poda nirthii podaaa...
 ")
         return ""
 
