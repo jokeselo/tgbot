@@ -21,6 +21,7 @@ PM_START_TEXT = """
 Hello {}, My name is {}! I'm a powerful full group admin bot powered by [mhd fajis](tg://user?id={})
 I'm the most popular group bot in telegram
 Hit /help to know what are the Camndos.
+[News channel](https://t.me/botcodesforyou)
 """
 
 HELP_STRINGS = """
@@ -31,7 +32,6 @@ the things I can help you with.
  - /start: start the bot
  - /help: PM's you this message.
  - /help <module name>: PM's you info about that module.
- - /donate: information about how to donate!
  - /settings:
    - in PM: will send you your settings for all supported modules.
    - in a group: will redirect you to pm, with all that chat's settings.
