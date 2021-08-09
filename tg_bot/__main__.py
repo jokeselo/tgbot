@@ -19,9 +19,13 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 Hello {}, My name is {}! I'm a powerful full group admin bot powered by [mhd fajis](tg://user?id={})
-I'm the most popular group bot in telegram
-Hit /help to know what are the Camndos.
+
+And Also most popular group bot in telegram
+
+Hit /help to know what are the Camandos.
+
 [News channel](https://t.me/botcodesforyou)
+
 """
 
 HELP_STRINGS = """
