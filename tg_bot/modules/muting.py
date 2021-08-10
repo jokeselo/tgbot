@@ -99,59 +99,6 @@ def unmute(bot: Bot, update: Update, args: List[str]) -> str:
                            "already do!")
 
     return ""
-@run_async
-
-@user_admin_no_reply
-
-@bot_admin
-
-@loggable
-
-def button(bot: Bot, update: Update) -> str:
-
-    query = update.callback_query  # type: Optional[CallbackQuery]
-
-    user = update.effective_user  # type: Optional[User]
-
-    match = re.match(r"un_mu\((.+?)\)", query.data)
-
-    if match:
-
-user_id = match.group(1)
-
-        chat = update.effective_chat  # type: Optional[Chat]
-
-        res = sql.unmute(user_id, chat.id)
-
-        if res:
-
-            update.effective_message.edit_text(
-
-                "User unmuted by {}.".format(mention_html(user.id, user.first_name)),
-
-                parse_mode=ParseMode.HTML)
-
-            user_member = chat.get_member(user_id)
-
-            return "<b>{}:</b>" \
-
-                   "\n#UNMUTE" \
-
-                   "\n<b>Admin:</b> {}" \
-
-                   "\n<b>User:</b> {}".format(html.escape(chat.title),
-
-                                              mention_html(user.id, user.first_name),
-
-                                              mention_html(user_member.user.id, user_member.user.first_name))
-
-        else:
-
-            update.effective_message.edit_text(
-
-                "User has already has no warns.".format(mention_html(user.id, user.first_name)),
-
-                parse_mode=ParseMode.HTML)
 
 @run_async
 @bot_admin
