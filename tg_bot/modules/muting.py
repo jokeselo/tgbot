@@ -40,11 +40,7 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
 
         elif member.can_send_messages is None or member.can_send_messages:
             bot.restrict_chat_member(chat.id, user_id, can_send_messages=False)
-            keyboard = InlineKeyboardMarkup(
-
-            [[InlineKeyboardButton("unmute - admin only", callback_data="un_mu({})".format(user.id))]])
-
-        reply = "ലവന്റെ വായ അടപ്പിച്ചിട്ടുണ്ട്\nMuted!")
+            message.reply_text("ലവന്റെ വായ അടപ്പിച്ചിട്ടുണ്ട്\nMuted!")
              
             return "<b>{}:</b>" \
                    "\n#MUTE" \
