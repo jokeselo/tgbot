@@ -34,13 +34,18 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
 
     member = chat.get_member(int(user_id))
 
-    if member:
+    if membe
         if is_user_admin(chat, user_id, member=member):
             message.reply_text("Afraid I can't stop an admin from talking!")
 
         elif member.can_send_messages is None or member.can_send_messages:
             bot.restrict_chat_member(chat.id, user_id, can_send_messages=False)
-            message.reply_text("ലവന്റെ വായ അടപ്പിച്ചിട്ടുണ്ട്\nMuted!")
+            keyboard = InlineKeyboardMarkup(
+
+            [[InlineKeyboardButton("unmute - admin only", callback_data="un_mu({})".format(user.id))]])
+
+        reply = "ലവന്റെ വായ അടപ്പിച്ചിട്ടുണ്ട്\nMuted!")
+             
             return "<b>{}:</b>" \
                    "\n#MUTE" \
                    "\n<b>Admin:</b> {}" \
@@ -94,7 +99,59 @@ def unmute(bot: Bot, update: Update, args: List[str]) -> str:
                            "already do!")
 
     return ""
+@run_async
 
+@user_admin_no_reply
+
+@bot_admin
+
+@loggable
+
+def button(bot: Bot, update: Update) -> str:
+
+    query = update.callback_query  # type: Optional[CallbackQuery]
+
+    user = update.effective_user  # type: Optional[User]
+
+    match = re.match(r"un_mu\((.+?)\)", query.data)
+
+    if match:
+
+user_id = match.group(1)
+
+        chat = update.effective_chat  # type: Optional[Chat]
+
+        res = sql.unmute(user_id, chat.id)
+
+        if res:
+
+            update.effective_message.edit_text(
+
+                "User unmuted by {}.".format(mention_html(user.id, user.first_name)),
+
+                parse_mode=ParseMode.HTML)
+
+            user_member = chat.get_member(user_id)
+
+            return "<b>{}:</b>" \
+
+                   "\n#UNMUTE" \
+
+                   "\n<b>Admin:</b> {}" \
+
+                   "\n<b>User:</b> {}".format(html.escape(chat.title),
+
+                                              mention_html(user.id, user.first_name),
+
+                                              mention_html(user_member.user.id, user_member.user.first_name))
+
+        else:
+
+            update.effective_message.edit_text(
+
+                "User has already has no warns.".format(mention_html(user.id, user.first_name)),
+
+                parse_mode=ParseMode.HTML)
 
 @run_async
 @bot_admin
