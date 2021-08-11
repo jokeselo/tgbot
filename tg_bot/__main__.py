@@ -146,11 +146,11 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
 
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/{}?startgroup=true".format(bot.username)),  InlineKeyboardButton(text="🤖 Bot Codes", url="https://t.me/botcodesforyou")],
+                    [[InlineKeyboardButton(text=" Add me to your group 🎉", url="t.me/{}?startgroup=true".format(bot.username)),  InlineKeyboardButton(text="©@botcodesforyou", url="https://t.me/botcodesforyou")],
                     [InlineKeyboardButton(text=" Developer ", url="https://t.me/mhdfajisn/5"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
 
     else:
-        update.effective_message.reply_text(" ഇവിടെ തന്നെ ഉണ്ട് സാറേ 🤒🙏...")
+        update.effective_message.reply_text(" ഇവിടെ തന്നെ ഉണ്ട് സാറേ 🤒🙏")
 
 
 # for test purposes
