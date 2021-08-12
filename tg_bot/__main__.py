@@ -150,8 +150,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                     [InlineKeyboardButton(text=" Developer ", url="https://t.me/mhdfajisn/5"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
 
     else:
-        await message.reply_chat_action("typing")
-        await message.reply_text(" ഇവിടെ തന്നെ ഉണ്ട് സാറേ 🤒🙏")
+        update.effective_message.reply_text(" ഇവിടെ തന്നെ ഉണ്ട് സാറേ 🤒🙏")
 
 
 # for test purposes
