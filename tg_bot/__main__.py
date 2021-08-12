@@ -151,7 +151,7 @@ def start(bot: Bot, update: Update, args: List[str]):
 
     else:
         await message.reply_chat_action("typing")
-        update.effective_message.reply_text(" ഇവിടെ തന്നെ ഉണ്ട് സാറേ 🤒🙏")
+        await message.reply_text(" ഇവിടെ തന്നെ ഉണ്ട് സാറേ 🤒🙏")
 
 
 # for test purposes
