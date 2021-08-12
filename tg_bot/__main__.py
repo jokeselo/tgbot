@@ -26,7 +26,7 @@ And Also most popular group bot in telegram
 
 Hit /help to know what are the Camandos.
 
-[News channel](https://t.me/botcodesforyou)
+[News channel](https://t.me/mhdfajisn/5)
 
 """
 
