@@ -1,3 +1,5 @@
-await message.reply_text("Please wait ...")
- 
-         
+bot.send_message(
+
+              chat_id=update.effective_chat.id,
+              text="Hi !!",
+              )
