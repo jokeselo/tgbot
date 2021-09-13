@@ -51,6 +51,9 @@ motivate him to make me even better. All the donation money will go to a better 
 (see his bio!). He's just a poor student, so every little helps!
 There are two ways of paying him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
 
+PglRobot_IMG = "https://telegra.ph/file/f1d7b30b05ba9f0dbf4e5.jpg"
+
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -141,11 +144,15 @@ def start(bot: Bot, update: Update, args: List[str]):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
-                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
+first_name = update.effective_user.first_name
+            update.effective_message.reply_photo(
+                PglRobot_IMG,
+                PM_START_TEXT.format(
+                    escape_markdown(first_name), escape_markdown(context.bot.first_name)
+                ),
+                parse_mode=ParseMode.MARKDOWN,
+                disable_web_page_preview=True,
+                reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text=" Add me to your group ➕", url="t.me/{}?startgroup=true".format(bot.username)),  InlineKeyboardButton(text="©@botcodesforyou", url="https://t.me/botcodesforyou")],
                     [InlineKeyboardButton(text=" Developer ", url="https://t.me/mhdfajisn/5"), InlineKeyboardButton(text="🛠 Help", url="https://t.me/{}?start=help".format(bot.username)) ]]))
 
